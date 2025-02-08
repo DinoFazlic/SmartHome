@@ -4,8 +4,8 @@ namespace SmartHome{
     public class Thermostat : SmartDevice{
         private int temperatureLevel;
 
-        public Thermostat(string name, int temperature) : base(name){
-            temperatureLevel = temperature;
+        public Thermostat(string name) : base(name){
+            temperatureLevel = 20;
         }
 
         public void setTemperature(int temperature){
