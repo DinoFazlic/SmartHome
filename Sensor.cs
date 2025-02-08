@@ -8,5 +8,9 @@ namespace SmartHome{
             this.name = name;
         }
 
+        public string getName(){
+            return name;
+        }
+
     }
 }

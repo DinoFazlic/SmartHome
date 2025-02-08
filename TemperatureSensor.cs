@@ -5,7 +5,7 @@ namespace SmartHome{
         private int currentTemperature;
 
         public TemperatureSensor(string name) : base(name){
-            currentTemperature = 0;
+            currentTemperature = new Random().Next(-5, 36);
         }
 
         public void setTemperature(int newTemperature){
@@ -16,13 +16,5 @@ namespace SmartHome{
             return currentTemperature;
         }
 
-        public void checkTemperature(Thermostat thermostat)
-        {
-            if (currentTemperature <= 5){
-                thermostat.turnOn();
-                thermostat.setTemperature(20);
-                currentTemperature = 20;
-            }
-        }
     }
 }

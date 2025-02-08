@@ -3,18 +3,22 @@ using System;
 namespace SmartHome{
     public class MotionSensor : Sensor
     {
-        private bool isMotionDetected;
+        private bool motion;
 
         public MotionSensor(string name) : base(name){
-            isMotionDetected = false;
+            motion = false;
         }
 
         public void detectedMotion(){
-            isMotionDetected = true;
+            motion = true;
+        }
+
+        public bool isMotionDetected(){
+            return motion;
         }
 
         public void reset(){
-            isMotionDetected = false;
+            motion = false;
         }
     }
 }

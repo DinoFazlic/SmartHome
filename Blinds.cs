@@ -16,11 +16,11 @@ namespace SmartHome{
             return position;
         }
 
-         public void Open(){
+        public void open(){
             position = 100;
         }
 
-        public void Close(){
+        public void close(){
             position = 0;
         }
 
