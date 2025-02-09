@@ -3,8 +3,8 @@ namespace SmartHome{
     public class Light : SmartDevice{
         private int brightnessLevel;
 
-        public Light(string name, int brightness) : base(name){
-            brightnessLevel = brightness;
+        public Light(string name) : base(name){
+            brightnessLevel = 100;
         }
 
         public void setBrightness(int brightness){

@@ -3,8 +3,8 @@ namespace SmartHome{
     public class Blinds : SmartDevice{
         private int position;
 
-        public Blinds(string name, int position) : base(name){
-            this.position = position;
+        public Blinds(string name) : base(name){
+            position = 0;
         }
 
         public void setPosition(int position){

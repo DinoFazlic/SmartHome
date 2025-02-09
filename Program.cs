@@ -4,9 +4,9 @@ namespace SmartHome{
         static void Main(string[] args){
             Controller controller = new Controller();
 
-            Light livingRoomLight = new Light("LivingRoom",100);
+            Light livingRoomLight = new Light("LivingRoom");
             Thermostat thermostat = new Thermostat("Home");
-            Blinds blinds = new Blinds("LivingRoom",0);
+            Blinds blinds = new Blinds("LivingRoom");
             WashingMachine washingMachine = new WashingMachine("Bathroom");
 
             controller.addDevice(livingRoomLight);
@@ -33,7 +33,7 @@ namespace SmartHome{
 
             Console.WriteLine($"Light in the living room: {(livingRoomLight.isDeviceOn() ? "ON" : "OFF")}");
             Console.WriteLine($"Termostat: {thermostat.getTemperature()} degrees");
-            Console.WriteLine($"Blinds: {blinds.getPosition()}%");
+            Console.WriteLine($"Living Room Blinds: {blinds.getPosition()}%");
         }
     }
 }

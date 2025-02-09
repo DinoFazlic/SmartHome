@@ -13,6 +13,10 @@ namespace SmartHome{
             return sensors;
         }
 
+        public List<SmartDevice> getDevices(){
+            return devices;
+        }
+
         public void addDevice(SmartDevice device){
             devices.Add(device);
         }
@@ -84,23 +88,23 @@ namespace SmartHome{
             }
         }
 
-        public void openBlinds(){
+        public void openBlinds(string roomName){
             foreach (SmartDevice device in devices){
-                if (device is Blinds blinds){
+                if (device is Blinds blinds && blinds.getName().Contains(roomName)){
                     blinds.open();
                 }
             }
         }
 
-        public void closeBlinds(){
+        public void closeBlinds(string roomName){
             foreach (SmartDevice device in devices){
-                if (device is Blinds blinds){
+                if (device is Blinds blinds && blinds.getName().Contains(roomName)){
                     blinds.close();
                 }
             }
         }
 
-        public void setBlinds(int position){
+        public void setBlinds(string roomName, int position){
             foreach (SmartDevice device in devices){
                 if (device is Blinds blinds){
                     blinds.setPosition(position);

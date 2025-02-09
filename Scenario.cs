@@ -43,9 +43,15 @@ namespace SmartHome{
                         tempSensor.setTemperature(20);
                     }
                     if(sensor is TemperatureSensor tSensor && tSensor.getTemperature() > 30){
-                        Console.WriteLine("Setting thermostat to 20 degrees and closing the blinds.");
+                        Console.WriteLine("Setting thermostat to 20 degrees and closing the blinds");
                         controller.turnOnThermostat(20);
-                        controller.setBlinds(50);
+                        tSensor.setTemperature(20);
+
+                        foreach (SmartDevice device in controller.getDevices()){
+                            if (device is Blinds blinds){
+                                blinds.setPosition(50);
+                            }
+                        }
                     }
                     if (sensor is MotionSensor motionSensor && motionSensor.isMotionDetected()){
                         string sensorName = motionSensor.getName();
