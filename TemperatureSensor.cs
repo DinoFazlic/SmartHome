@@ -12,7 +12,7 @@ namespace SmartHome{
             currentTemperature = newTemperature;
         }
 
-         public int getTemperature(){
+        public int getTemperature(){
             return currentTemperature;
         }
 

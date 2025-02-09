@@ -7,10 +7,9 @@ namespace SmartHome{
         private int temperature;
         private int speed;
         private int time;
-        private bool isWashing;
 
         public WashingMachine(string name) : base(name){
-            isWashing = false;
+            isOn= false;
             time = 0;
             speed = 0;
             temperature = 0;
@@ -51,7 +50,8 @@ namespace SmartHome{
 
 
         public void startWashing(string mode, int temperature, int speed, int time){
-            isWashing = true;
+            Console.WriteLine("The washing machine is active.");
+            isOn = true;
             this.mode = mode;
             this.temperature = temperature; 
             this.speed = speed;
@@ -59,7 +59,8 @@ namespace SmartHome{
         }
 
         public void stopWashing(){
-            isWashing = false;
+            Console.WriteLine("The washing machine is not active.");
+            isOn= false;
             time = 0;
             speed = 0;
             temperature = 0;

@@ -21,13 +21,20 @@ namespace SmartHome{
             controller.addSensor(motionSensorLivingRoom);
             controller.addSensor(temperatureSensor);
 
-            motionSensorLivingRoom.detectedMotion();
-            temperatureSensor.setTemperature(2);
+            Scenario scenario = new Scenario(controller);
 
-            controller.checkSensors();
+            motionSensorLivingRoom.detectedMotion();
+            temperatureSensor.setTemperature(35);
+
+            scenario.checkConditions();
+
+            controller.turnOnWahingMachine("Quick wash", 50, 1200, 30); 
+
+            
 
             Console.WriteLine($"Light in the living room: {(livingRoomLight.isDeviceOn() ? "ON" : "OFF")}");
-            Console.WriteLine($"Termostat: {thermostat.getTemperature()}°C");
+            Console.WriteLine($"Termostat: {thermostat.getTemperature()} degrees");
+            Console.WriteLine($"Blinds: {blinds.getPosition()}%");
         }
     }
 }

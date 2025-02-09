@@ -1,4 +1,3 @@
-using System;
 
 namespace SmartHome{
     public class Blinds : SmartDevice{
@@ -12,7 +11,7 @@ namespace SmartHome{
             this.position = position;
         }
 
-        public int getPosition(int position){
+        public int getPosition(){
             return position;
         }
 

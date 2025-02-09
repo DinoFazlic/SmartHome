@@ -1,7 +1,7 @@
 using System;
 
 namespace SmartHome{
-    public abstract class SmartDevice{
+    public abstract class SmartDevice : ISmartDevice{
         public string name;
         public bool isOn;
 
