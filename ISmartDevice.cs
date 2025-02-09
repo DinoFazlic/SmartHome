@@ -1,4 +1,3 @@
-using System;
 
 namespace SmartHome{
     public interface ISmartDevice{

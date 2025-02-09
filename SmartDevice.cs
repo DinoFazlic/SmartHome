@@ -1,4 +1,3 @@
-using System;
 
 namespace SmartHome{
     public abstract class SmartDevice : ISmartDevice{
